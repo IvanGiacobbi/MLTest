@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Importiamo il file di stile-->
+    <title>Prima app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    {% from "_formhelpers.html" import render_field %}
+    <div> Come ti chiami?</div>
+    <!-- Creiamo il form -->
+    <form  method=post action="/hello">
+      <dl>
+        <!-- Visualizziamo il form sayhello di app.py-->
+        {{ render_field(form.sayhello) }}
+      </dl>
+      <!-- Aggiungiamo un bottone al form per acquisire i caratteri inseriti -->
+      <input type=submit value='Dire ciao' name='submit_btn'>
+    </form>
+  </body>
+</html>

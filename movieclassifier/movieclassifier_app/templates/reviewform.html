@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Importiamo il file di stile-->
+    <title>Classificatore di film</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <h2> Inserisci la recensione</h2>
+    {% from "_formhelpers.html" import render_field %}
+    <!-- Creiamo il form -->
+    <form  method=post action="/results">
+      <dl>
+        <!-- Visualizziamo il form moviereview di app.py-->
+        {{ render_field(form.moviereview, cols='30', rows='10') }}
+      </dl>
+      <div>
+      <!-- Aggiungiamo un bottone al form per acquisire i caratteri inseriti -->
+      <input type=submit value='Inserisci recesnsione' name='submit_btn'>
+    </div>
+  </body>
+</html>

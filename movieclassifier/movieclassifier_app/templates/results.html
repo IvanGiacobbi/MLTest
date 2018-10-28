@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Importiamo il file di stile-->
+    <title>Classificatore di film</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <h3>La tua recesnione:</h3>
+    <div>{{content}}</div>
+    <h3>Predizione:</h3>
+    <div> Questa recensione è <strong> {{prediction}} </strong> (probabilità: {{ probability }} %).</div>
+    <div id='button'>
+      <form action="/thanks" method='post'>
+        <input type=submit value='Corretta' name='feedback_button'>
+        <input type=submit value='Sbagliata' name='feedback_button'>
+        <input type=hidden value='{{ prediction }}' name='prediction'>
+        <input type=hidden value='{{ content }}' name='review'>
+      </form>
+      <div id='button'>
+        <form action="/">
+          <input type=submit value='Inserisci una nuova recensione' name='review'>
+        </form>
+      </div>
+  </body>
+</html>

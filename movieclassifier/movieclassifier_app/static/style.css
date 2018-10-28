@@ -1,0 +1,9 @@
+/* Foglio di stile*/
+
+body{
+  width:600px;
+  font-size: 2em;
+}
+.button{
+  padding-top: 20px;
+}
